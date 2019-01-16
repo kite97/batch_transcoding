@@ -5,5 +5,4 @@
                      1=a-lam:wav -> pcm:wav
                      2=pcm:wav -> u-lam:wav
                      3=u-lam:wav -> pcm:wav
-          argv[3]为输出文件名
 
