@@ -104,12 +104,21 @@ void ergodic_statistics(int argc, char judge, char* dirname){
     }
 }
 
+void number_error(){
+    printf("input Error!\n");
+    printf("input argv[1] in dirname\n");
+    printf("input argv[2] 0=pcm:wav -> a-lam:wav\n");
+    printf("              1=a-lam:wav -> pcm:wav\n");
+    printf("              2=pcm:wav -> u-lam:wav\n");
+    printf("              3=u-lam:wav -> pcm:wav\n");
+}
+
 //主程序
 int main(int argc, char* argv[]) {
-    if(argc == 1){
-        printf("There is no file\n");
+    if(argc != 3){
+        number_error();
     }
-    else{
+    else {
         char judge;
         judge = argv[2][0];
         char * dirname;

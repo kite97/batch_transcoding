@@ -108,7 +108,7 @@ short ulaw2linear(unsigned char	u_val){
 
 void print_error(){
     printf("input Error!\n");
-    printf("input argv[1] in filename\n");
+    printf("input argv[1] in dirname\n");
     printf("input argv[2] 0=pcm:wav -> a-lam:wav\n");
     printf("              1=a-lam:wav -> pcm:wav\n");
     printf("              2=pcm:wav -> u-lam:wav\n");
@@ -163,7 +163,7 @@ void encoding(int argc, char judge, char* file_name, char* address){
     struct stat st;
     char output[64];
     sprintf(output,"%s%s","output//",file_name);
-    if (argc != 3 || ('0' > judge || judge > '3')){
+    if (('0' > judge || judge > '3')){
         print_error();
         exit(-1);
     }
@@ -202,7 +202,6 @@ void encoding(int argc, char judge, char* file_name, char* address){
             goto END;
         }
         fpout = fopen(output, "w+");
-        fpout = fopen(file_name, "w+");
         if (NULL == fpout){
             fclose(fpin);
             printf("OpenFile Error!\n");
